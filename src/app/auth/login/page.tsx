@@ -4,6 +4,7 @@ import {useRouter, useSearchParams} from 'next/navigation';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {useForm} from 'react-hook-form';
 import {useUser} from 'hooks/user/user';
+import {useTranslation} from 'hooks/common/translation';
 import {TextInput} from 'components/text-input';
 import {useLoginMutate} from 'services/api/auth/use-login-mutate';
 import {PAGE_ROUTES} from 'configs/page-routes';
@@ -13,6 +14,7 @@ import type {IAuthentication} from 'types/auth';
 export default function Login() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const t = useTranslation('Auth');
   const backUrl = searchParams.get('backUrl');
 
   const user = useUser();
@@ -40,19 +42,19 @@ export default function Login() {
   return (
     <div className='flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8'>
       <div className='sm:mx-auto sm:w-full sm:max-w-sm'>
-        <h2 className='mt-10 text-center text-2xl font-bold leading-9 tracking-tight'>به حساب خود وارد شوید</h2>
+        <h2 className='mt-10 text-center text-2xl font-bold leading-9 tracking-tight'>{t('loginPage')}</h2>
       </div>
       <div className='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
         <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
           <TextInput
             type='tel'
             className='text-center'
-            label='شماره موبایل'
+            label={t('phoneNumber')}
             {...register('phoneNumber')}
             error={errors?.phoneNumber}
           />
           <TextInput
-            label='رمزعبور'
+            label={t('password')}
             type='password'
             className='text-center'
             {...register('password')}
