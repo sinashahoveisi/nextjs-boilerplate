@@ -1,0 +1,7 @@
+{
+  "extends": ["gitmoji"],
+  "rules": {
+    "header-max-length": [0, "always", 50],
+    "body-max-line-length": [1, "always", 100]
+  }
+}

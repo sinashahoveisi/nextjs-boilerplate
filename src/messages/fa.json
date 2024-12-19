@@ -1,0 +1,34 @@
+{
+  "Auth": {
+    "login": "ورود",
+    "register": "ثبت نام",
+    "email": "ایمیل",
+    "password": "رمز عبور",
+    "confirmPassword": "تکرار رمز عبور",
+    "signIn": "ورود",
+    "firstName": "نام",
+    "lastName": "نام خانوادگی",
+    "referralCode": "کد معرفی",
+    "sendEmail": "ارسال ایمیل",
+    "changePassword": "تغییر رمزعبور",
+    "pleaseLoginToYourAccount": "لطفا وارد حساب کاربری خود شوید.",
+    "createAccountHint": "حساب کاربری ندارید؟ حساب کاربری جدید ایجاد کنید",
+    "signInAccountHint": "آیا حساب کاربری دارید؟ وارد شوید",
+    "changePasswordYourAccount": "رمز عبور حساب خود را تغییر دهید",
+    "signInToYourAccount": "به حساب خود وارد شوید",
+    "forgotYourPassword": "رمز عبور خود را فراموش کرده اید؟ بازنشانی رمز عبور",
+    "resetPasswordYourAccount": "رمز عبور حساب خود را بازنشانی کنید",
+    "registerYourAccount": "حساب خود را ایجاد کنید"
+  },
+  "Layout": {
+    "home": "خانه"
+  },
+  "Home": {
+    "home": "خانه"
+  },
+  "Error": {
+    "somethingHasHappened": "اتفاقی رخ داده است.",
+    "reload": "بارگذاری مجدد",
+    "resetOrContactSupportMessage": "ما همواره در حال رفع مشکلات اپلیکیشن هستیم. میتوانید اپلیکیشن را مجدد بارگذاری کنید یا دو صورت پابرجا بودن مشکل با پشتیبانی تماس حاصل فرمایید."
+  }
+}

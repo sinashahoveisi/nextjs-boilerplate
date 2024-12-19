@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'custom';
+
+@layer base {
+  @import 'variables';
+
+  html,
+  body {
+    @apply h-full font-body text-pen;
+    overflow-x: hidden;
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  .ltr {
+    direction: ltr;
+  }
+
+  .rtl {
+    direction: rtl;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 0.5em;
+    background: transparent;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.3);
+    opacity: 0.4;
+    border-radius: 10px;
+  }
+
+  .scroll-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+  @import url('react-toastify/dist/ReactToastify.css');
+
+  input:checked + div {
+    @apply border-primary-dark;
+  }
+  input:checked + div svg {
+    @apply block;
+  }
+  html[dir='rtl'] ::placeholder {
+    text-align: right;
+  }
+  ::placeholder {
+    text-align: left;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .beautiful-content {
+    p {
+      @apply font-normal;
+    }
+    a {
+      @apply underline text-blue-500 font-medium;
+    }
+  }
+  .line-front-text {
+    @apply relative after:content-[''] after:inline-block after:w-24 after:h-0.5 after:bg-white after:mt-2 after:rounded after:mx-4;
+  }
+  .line-after-image {
+    @apply relative after:content-[''] after:inline-block after:w-[100px] after:h-0.5 after:bg-black after:rounded;
+  }
+}

@@ -1,3 +1,101 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": ["next", "plugin:prettier/recommended", "prettier"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "prettier", "unicorn", "check-file"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    },
+    "next": {
+      "rootDir": ["apps/*/"]
+    }
+  },
+  "rules": {
+    "no-use-before-define": "error",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "strict": ["error", "safe"],
+    "no-debugger": "error",
+    "brace-style": ["error", "1tbs", {"allowSingleLine": true}],
+    "no-trailing-spaces": "error",
+    "keyword-spacing": "error",
+    "react/jsx-filename-extension": [2, {"extensions": [".js", ".jsx", ".ts", ".tsx"]}],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    // "unicorn/filename-case": ["error", {"cases": {"camelCase": true, "pascalCase": true}}],
+    // "check-file/folder-naming-convention": [
+    //   "error",
+    //   {
+    //     "src/componnets/**/": "CAMEL_CASE",
+    //     "src/assets/**/": "CAMEL_CASE",
+    //     "src/app/**/": "KEBAB_CASE"
+    //   }
+    // ],
+    "vars-on-top": "error",
+    "comma-dangle": ["error", "never"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "guard-for-in": "error",
+    "no-eval": "error",
+    "no-with": "error",
+    "valid-typeof": "error",
+    "eqeqeq": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "no-unused-vars": "error",
+    "no-alert": "error",
+    "no-console": "error",
+    "no-continue": "warn",
+    "no-plusplus": "off",
+    "no-useless-escape": "warn",
+    "react/jsx-props-no-spreading": "off",
+    "no-extra-semi": "error",
+    "no-unreachable": "error",
+    "react/prefer-es6-class": "warn",
+    "react/jsx-boolean-value": "warn",
+    "react/prop-types": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "no-empty": "error",
+    "no-var": "error",
+    "prefer-const": "error",
+    "prefer-template": "error",
+    "space-in-brackets": "off",
+    "no-html-link-for-pages": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "prefix": ["I"]
+      }
+    ],
+    "import/no-unused-modules": "error"
+  }
 }
