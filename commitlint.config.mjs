@@ -1,0 +1,14 @@
+const Configuration = {
+  extends: ['@commitlint/config-conventional'],
+  rules: {
+    "header-max-length": [0, "always", 50],
+    "body-max-line-length": [1, "always", 100],
+    "type-enum": [
+      2,
+      "always",
+      ["update", "fix", "test", "release", "feat", "merge", "config", "perf"]
+    ]
+    }
+};
+
+export default Configuration;
