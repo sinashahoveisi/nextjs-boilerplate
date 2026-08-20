@@ -120,20 +120,20 @@ export const useMutationFactory = <Response>({
     mutationFn,
     retry: false,
     ...anotherConfigs,
-    onSuccess: (data: IUseMutateFnData<Response>, variables?: MutationRequestType, context?: unknown) => {
+    onSuccess: (data, variables, onMutateResult, context) => {
       removeQueries?.forEach((removeQuery: QueryFilters) => queryClient.removeQueries(removeQuery));
       refetchQueries?.forEach((refetchQuery: QueryFilters) => queryClient.refetchQueries(refetchQuery));
       if (!!successToast) {
-        toast.success(typeof successToast === 'string' ? successToast : 'با موفقیت انجام شد.');
+        toast.success(typeof successToast === 'string' ? successToast : 'Done successfully.');
       }
       if (onSuccess) {
-        onSuccess(data, variables, context);
+        onSuccess(data, variables, onMutateResult, context);
       }
     },
-    onError: (error: AxiosError<ResponseErrorType>, variables?: MutationRequestType, context?: unknown) => {
+    onError: (error, variables, onMutateResult, context) => {
       handleRequestError(0, error);
       if (onError) {
-        onError(error, variables, context);
+        onError(error, variables, onMutateResult, context);
       }
     }
   });

@@ -1,4 +1,1 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-cd "$(dirname "$0")/.." && npx --no lint-staged --concurrent false
+npx lint-staged --concurrent false

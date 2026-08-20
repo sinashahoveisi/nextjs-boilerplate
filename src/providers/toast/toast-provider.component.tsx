@@ -13,7 +13,7 @@ export const ToastProvider: React.FC = () => {
       rtl
       hideProgressBar
       className='text-xs'
-      bodyClassName='m-0 p-0'
+      toastClassName='m-0 p-0'
       transition={Flip}
       closeOnClick
       pauseOnHover

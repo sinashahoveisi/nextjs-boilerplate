@@ -10,6 +10,6 @@ export const toFormatDateTime = (
     hour12: false
   }
 ) => {
-  const formatedDate = new Date(date).toLocaleString('fa-ir', options);
+  const formatedDate = new Date(date).toLocaleString('en-US', options);
   return formatedDate.split(',').join(' ');
 };

@@ -1,17 +1,17 @@
 'use client';
-import 'assets/styles/main.scss';
+import 'assets/styles/main.css';
 
 import {ErrorPage} from '@/components/error-page';
 
 export default function GlobalError({reset}: {error: Error & {digest?: string}; reset: () => void}) {
   return (
-    <html lang='fa' dir='rtl'>
-      <body>
+    <html lang='en' dir='ltr' suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <ErrorPage
           code={500}
-          title='اتفاقی رخ داده است.'
-          description='ما همواره در حال رفع مشکلات اپلیکیشن هستیم. میتوانید اپلیکیشن را مجدد بارگذاری کنید یا دو صورت پابرجا بودن مشکل با پشتیبانی تماس حاصل فرمایید.'
-          resetText='بارگذاری مجدد'
+          title='Something went wrong.'
+          description="We're working to fix the issue. You can reload the app, or contact support if the problem continues."
+          resetText='Reload'
           onReset={reset}
         />
       </body>

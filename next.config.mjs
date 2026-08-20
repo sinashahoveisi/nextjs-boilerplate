@@ -5,7 +5,6 @@ const withPWA = withPWAInit({
   cacheOnFrontEndNav: false,
   aggressiveFrontEndNavCaching: true,
   reloadOnOnline: true,
-  swcMinify: true,
   skipWaiting: true,
   clientsClaim: true,
   cleanupOutdatedCaches: true,
@@ -36,8 +35,9 @@ const withPWA = withPWAInit({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  swcMinify: true, // Enable SWC minification for improved performance
   output: 'standalone',
+  // PWA plugin injects webpack config; empty turbopack config allows `next dev` (Turbopack default).
+  turbopack: {},
   compiler: {
     removeConsole: process.env.NODE_ENV !== 'development' // Remove console.log in production
   },

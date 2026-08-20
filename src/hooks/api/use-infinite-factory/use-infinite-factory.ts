@@ -127,7 +127,8 @@ export const useInfiniteFactory = <Response, SelectResponse = Response>({
     IUseInfiniteFnData<Response>,
     AxiosError<ResponseErrorType>,
     InfiniteData<IUseInfiniteFnData<SelectResponse>>,
-    QueryKeyType
+    QueryKeyType,
+    number
   >({
     queryKey,
     queryFn,
@@ -143,13 +144,13 @@ export const useInfiniteFactory = <Response, SelectResponse = Response>({
     initialPageParam: 1,
     getPreviousPageParam: (lastPage: IUseInfiniteFnData<Response>) => {
       if (lastPage?.current > 1) return lastPage?.current - 1;
-      return null;
+      return undefined;
     },
     getNextPageParam: (lastPage: IUseInfiniteFnData<Response>, pages) => {
       const currentPage = pages?.length || 0;
       const currentCount = currentPage * lastPage?.pageSize;
       if (currentCount < lastPage?.totalCount) return currentPage + 1;
-      return null;
+      return undefined;
     }
   });
 

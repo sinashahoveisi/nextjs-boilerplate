@@ -1,39 +1,45 @@
-import type {StorybookConfig} from '@storybook/nextjs';
+import type {StorybookConfig} from '@storybook/nextjs-vite';
 import path from 'path';
+import {fileURLToPath} from 'url';
+
+const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    '@storybook/addon-onboarding',
-    '@storybook/addon-essentials',
     '@chromatic-com/storybook',
-    '@storybook/addon-interactions'
+    '@storybook/addon-vitest',
+    '@storybook/addon-a11y',
+    '@storybook/addon-docs',
+    '@storybook/addon-onboarding'
   ],
-  framework: {
-    name: '@storybook/nextjs',
-    options: {}
-  },
+  framework: '@storybook/nextjs-vite',
   staticDirs: ['../public'],
-  webpackFinal: async (config: any) => {
+  viteFinal: async (config) => {
+    config.resolve = config.resolve ?? {};
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@': path.resolve(__dirname, '../src/'),
-      assets: path.resolve(__dirname, '../src/assets'),
-      configs: path.resolve(__dirname, '../src/configs'),
-      components: path.resolve(__dirname, '../src/components'),
-      constants: path.resolve(__dirname, '../src/constants'),
-      containers: path.resolve(__dirname, '../src/containers'),
-      hooks: path.resolve(__dirname, '../src/hooks'),
-      layout: path.resolve(__dirname, '../src/layout'),
-      libs: path.resolve(__dirname, '../src/libs'),
-      messages: path.resolve(__dirname, '../src/messages'),
-      providers: path.resolve(__dirname, '../src/providers'),
-      services: path.resolve(__dirname, '../src/services'),
-      types: path.resolve(__dirname, '../src/types'),
-      utils: path.resolve(__dirname, '../src/utils'),
-      validations: path.resolve(__dirname, '../src/validations')
+      '@': path.resolve(dirname, '../src'),
+      assets: path.resolve(dirname, '../src/assets'),
+      configs: path.resolve(dirname, '../src/configs'),
+      components: path.resolve(dirname, '../src/components'),
+      constants: path.resolve(dirname, '../src/constants'),
+      containers: path.resolve(dirname, '../src/containers'),
+      hooks: path.resolve(dirname, '../src/hooks'),
+      layout: path.resolve(dirname, '../src/layout'),
+      libs: path.resolve(dirname, '../src/libs'),
+      messages: path.resolve(dirname, '../src/messages'),
+      providers: path.resolve(dirname, '../src/providers'),
+      services: path.resolve(dirname, '../src/services'),
+      stores: path.resolve(dirname, '../src/stores'),
+      types: path.resolve(dirname, '../src/types'),
+      utils: path.resolve(dirname, '../src/utils'),
+      validations: path.resolve(dirname, '../src/validations'),
+      test: path.resolve(dirname, '../src/test')
     };
+
     return config;
   }
 };
+
 export default config;

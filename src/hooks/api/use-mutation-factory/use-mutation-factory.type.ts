@@ -11,12 +11,11 @@ export type IUseMutateShowErrorFn = (
   context: unknown
 ) => boolean;
 
-export interface IUseMutationFactoryProps<Response>
-  extends UseMutationOptions<
-    IUseMutateFnData<Response>,
-    AxiosError<ResponseErrorType>,
-    MutationRequestType | undefined
-  > {
+export interface IUseMutationFactoryProps<Response> extends UseMutationOptions<
+  IUseMutateFnData<Response>,
+  AxiosError<ResponseErrorType>,
+  MutationRequestType | undefined
+> {
   url: string;
   query?: object;
   version?: number;

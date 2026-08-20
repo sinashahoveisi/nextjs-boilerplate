@@ -8,6 +8,10 @@
 
 # testing
 /coverage
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/playwright/.auth/
 
 # next.js
 /.next/
@@ -39,4 +43,7 @@ next-env.d.ts
 sw.*
 workbox-*
 swe-worker-*
+# storybook
 *storybook.log
+/storybook-static
+debug-storybook.log

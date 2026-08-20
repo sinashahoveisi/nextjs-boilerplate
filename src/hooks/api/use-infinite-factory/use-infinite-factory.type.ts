@@ -11,8 +11,8 @@ export type IUseInfiniteFactoryProps<Response, SelectResponse = Response> = Omit
     IUseInfiniteFnData<Response>,
     AxiosError<ResponseErrorType>,
     InfiniteData<IUseInfiniteFnData<SelectResponse>>,
-    IUseInfiniteFnData<Response>,
-    QueryKeyType
+    QueryKeyType,
+    number
   >,
   'getNextPageParam' | 'getPreviousPageParam' | 'initialPageParam'
 > & {

@@ -1,8 +1,11 @@
 import * as yup from 'yup';
+import {translation} from 'utils/translate';
+
+const t = translation('Validation');
 
 export const loginValidationSchema = yup.object().shape({
-  phoneNumber: yup.string().trim().length(11, 'شماره تماس باید ۱۱ رقم باشد').required('شماره تماس الزامی است'),
-  password: yup.string().trim().required('لطفا رمزعبور خود را وارد کنید')
+  phoneNumber: yup.string().trim().required(t('phoneNumber.required')).length(11, t('phoneNumber.length')),
+  password: yup.string().trim().required(t('password.required'))
 });
 
 export type LoginSchemaType = yup.InferType<typeof loginValidationSchema>;

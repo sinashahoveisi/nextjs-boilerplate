@@ -1,6 +1,6 @@
 import {useMemo} from 'react';
 import {getNestedValue} from 'utils/get-nested-value';
-import translations from 'messages/fa.json';
+import translations from 'messages/en.json';
 import type {TranslationType} from 'types/translation';
 
 /**

@@ -1,0 +1,38 @@
+{
+  "Auth": {
+    "login": "Login",
+    "loginPage": "Sign in to your account",
+    "phoneNumber": "Phone number",
+    "password": "Password",
+    "backToHome": "Back to home"
+  },
+  "Home": {
+    "home": "Home"
+  },
+  "Error": {
+    "somethingHasHappened": "Something went wrong.",
+    "pageNotFound": "Page not found.",
+    "reload": "Reload",
+    "mainPage": "Home",
+    "resetOrContactSupportMessage": "We're working to fix the issue. You can reload the app, or contact support if the problem continues.",
+    "notFoundMessage": "Sorry, we couldn't find that page. There's plenty to explore on the home page."
+  },
+  "Validation": {
+    "phoneNumber": {
+      "required": "Phone number is required",
+      "length": "Phone number must be 11 digits"
+    },
+    "password": {
+      "required": "Please enter your password",
+      "newRequired": "Please enter a new password",
+      "confirmRequired": "Please confirm your new password",
+      "match": "Password and confirmation must match"
+    },
+    "code": {
+      "required": "Please enter the verification code"
+    },
+    "acceptRules": {
+      "required": "Please accept the terms"
+    }
+  }
+}

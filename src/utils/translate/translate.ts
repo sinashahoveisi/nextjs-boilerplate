@@ -1,4 +1,4 @@
-import translations from 'messages/fa.json';
+import translations from 'messages/en.json';
 import {getNestedValue} from 'utils/get-nested-value';
 import type {TranslationType} from 'types/translation';
 

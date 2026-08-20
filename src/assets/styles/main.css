@@ -1,0 +1,179 @@
+@import 'tailwindcss';
+@import 'react-toastify/dist/ReactToastify.css';
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-body: var(--font-main), var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@theme {
+  --color-primary: #1e2a38;
+  --color-primary-dark: #ffffff;
+  --color-secondary: #ffffff;
+  --color-secondary-dark: #1e2a38;
+  --color-pen: #212121;
+  --color-pen-light: #959499;
+  --color-pen-dark: #424750;
+  --color-body: #fff;
+  --color-body-dark: #1b242d;
+
+  --text-xxs: 0.625rem;
+  --text-normal: 0.935rem;
+  --text-normal--line-height: 1.3rem;
+  --text-h6: 1.35rem;
+  --text-h6--line-height: 2rem;
+  --text-h5: 1.4rem;
+  --text-h5--line-height: 2.25rem;
+  --text-h4: 1.45rem;
+  --text-h4--line-height: 2.5rem;
+  --text-h3: 1.5rem;
+  --text-h3--line-height: 1;
+  --text-h2: 1.6rem;
+  --text-h2--line-height: 1;
+  --text-h1: 1.7rem;
+  --text-h1--line-height: 1;
+  --text-big: 2.5rem;
+  --text-big--line-height: 1;
+  --text-veryBig: 6rem;
+  --text-veryBig--line-height: 1;
+  --text-huge: 8rem;
+  --text-huge--line-height: 1;
+}
+
+@utility container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (width >= 1024px) {
+  .container {
+    max-width: 1224px;
+  }
+}
+
+@media (width >= 1280px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+@media (width >= 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+@layer base {
+  html,
+  body {
+    @apply h-full min-h-full font-sans bg-background text-foreground;
+    overflow-x: hidden;
+  }
+
+  select {
+    appearance: none;
+  }
+
+  .ltr {
+    direction: ltr;
+  }
+
+  .rtl {
+    direction: rtl;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.5em;
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.3);
+    opacity: 0.4;
+    border-radius: 10px;
+  }
+
+  .scroll-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+  input:checked + div {
+    @apply border-primary-dark;
+  }
+
+  input:checked + div svg {
+    @apply block;
+  }
+
+  html[dir='rtl'] ::placeholder {
+    text-align: right;
+  }
+
+  ::placeholder {
+    text-align: left;
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility line-front-text {
+  position: relative;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 6rem;
+    height: 0.125rem;
+    margin-inline: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 0.25rem;
+    background: white;
+  }
+}
+
+@utility line-after-image {
+  position: relative;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 100px;
+    height: 0.125rem;
+    border-radius: 0.25rem;
+    background: black;
+  }
+}
+
+.beautiful-content {
+  p {
+    @apply font-normal;
+  }
+
+  a {
+    @apply underline text-blue-500 font-medium;
+  }
+}

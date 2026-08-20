@@ -1,6 +1,6 @@
 export type ResponseErrorType = {
   message: string;
-  isSucced: false;
+  success: false;
   data: null;
 };
 

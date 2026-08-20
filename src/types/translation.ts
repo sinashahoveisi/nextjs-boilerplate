@@ -1,1 +1,1 @@
-export type TranslationType = typeof import('messages/fa.json');
+export type TranslationType = typeof import('messages/en.json');

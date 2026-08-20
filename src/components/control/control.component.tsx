@@ -42,7 +42,7 @@ import type {IControlProps as Props} from './control.type';
 export const Control: React.FC<Props> = ({transform, valueKey = 'value', children, ...props}) => {
   if ('onChange' in props && !!props['onChange']) {
     // If `onChange` exists in props, control the input manually
-    return cloneElement(children, {
+    return cloneElement(children as React.ReactElement<Record<string, unknown>>, {
       [valueKey]: props?.value,
       onChange: transform && props?.onChange ? pipe(transform, props?.onChange) : props?.onChange,
       error: props?.error
@@ -53,7 +53,7 @@ export const Control: React.FC<Props> = ({transform, valueKey = 'value', childre
       <Controller
         {...props}
         render={({field: {onChange, value}, fieldState: {error}}) =>
-          cloneElement(children, {
+          cloneElement(children as React.ReactElement<Record<string, unknown>>, {
             name: props.name,
             [valueKey]: value,
             onChange: transform ? pipe(transform, onChange) : onChange,

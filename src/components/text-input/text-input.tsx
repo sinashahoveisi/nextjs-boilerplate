@@ -31,7 +31,7 @@ export const TextInput = forwardRef<HTMLInputElement, ITextInput>(
         {label && (
           <label
             htmlFor={name}
-            className={clsx('text-xs font-medium md:text-sm mb-1', {
+            className={clsx('text-xs font-medium md:text-sm mb-1 text-zinc-400', {
               'after:mr-1 after:text-red-600 after:content-["*"]': required
             })}>
             {label}
@@ -59,6 +59,7 @@ export const TextInput = forwardRef<HTMLInputElement, ITextInput>(
               <input
                 {...props}
                 ref={ref}
+                id={props.id ?? name}
                 name={name}
                 disabled={disabled}
                 type={type}
